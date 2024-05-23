@@ -1,12 +1,12 @@
-import express from "express";
-import dotenv from "dotenv";
-import http from "http";
-import { Server } from "socket.io";
-import cors from "cors";
-import redisClient from "./utils/redisClient.js";
-import authRoutes from "./routes/authRoutes.js";
-import chatController from "./controllers/chatController.js";
-import authMiddleware from "./middlewares/authMiddleware.js";
+const express = require("express");
+const dotenv = require("dotenv");
+const http = require("http");
+const { Server } = require("socket.io");
+const cors = require("cors");
+const redisClient = require("./utils/redisClient.js");
+const authRoutes = require("./routes/authRoutes.js");
+const chatController = require("./controllers/chatController.js");
+const authMiddleware = require("./middlewares/authMiddleware.js");
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;

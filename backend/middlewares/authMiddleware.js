@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
 const authMiddleware = (socket, next) => {
   const token = socket.handshake.query.token;

@@ -1,6 +1,6 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import redisClient from "../utils/redisClient.js";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const redisClient = require("../utils/redisClient.js");
 
 export const register = async (req, res) => {
   const { username, password } = req.body;
