@@ -12,10 +12,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 const allowCrossDomain = (req, res, next) => {
-  res.header(
-    `Access-Control-Allow-Origin`,
-    `https://hulkapps-chat-app-cjm7.vercel.app`
-  );
+  res.header(`Access-Control-Allow-Origin`, `*`);
   res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
   res.header(`Access-Control-Allow-Headers`, `Content-Type`);
   next();
@@ -25,14 +22,14 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://hulkapps-chat-app-cjm7.vercel.app",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
 
 app.use(allowCrossDomain);
 
-app.use(cors({ origin: "https://hulkapps-chat-app-cjm7.vercel.app" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 
