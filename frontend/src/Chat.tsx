@@ -25,7 +25,7 @@ const Chat = ({ token }: { token: string }) => {
   const [joinedRooms, setJoinedRooms] = useState<string[]>([]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000", {
+    const newSocket = io("https://hulkapps-chat-app.vercel.app", {
       query: { token },
       transports: ["websocket"],
     });
