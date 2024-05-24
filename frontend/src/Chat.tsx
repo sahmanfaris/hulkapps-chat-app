@@ -25,7 +25,7 @@ const Chat = ({ token }: { token: string }) => {
   const [joinedRooms, setJoinedRooms] = useState<string[]>([]);
 
   useEffect(() => {
-    const newSocket = io("https://hulkapps-chat-app.vercel.app", {
+    const newSocket = io("https://hulkapps-chat-app.onrender.com", {
       query: { token },
       transports: ["websocket"],
     });

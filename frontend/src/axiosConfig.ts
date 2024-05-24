@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://hulkapps-chat-app.vercel.app",
+  baseURL: "https://hulkapps-chat-app.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },

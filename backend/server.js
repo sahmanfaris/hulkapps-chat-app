@@ -18,7 +18,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://hulkapps-chat-app-cjm7.vercel.app",
+    origin: "https://hulkapps-chat-app.onrender.com",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -26,7 +26,7 @@ const io = new Server(server, {
 
 app.use(
   cors({
-    origin: "https://hulkapps-chat-app-cjm7.vercel.app",
+    origin: "https://hulkapps-chat-app.onrender.com",
     methods: ["GET", "POST"],
     credentials: true,
   })

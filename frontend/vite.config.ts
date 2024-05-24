@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "https://hulkapps-chat-app.vercel.app",
+      "/api": "https://hulkapps-chat-app.onrender.com",
     },
   },
 });
