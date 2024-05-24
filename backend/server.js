@@ -1,20 +1,20 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const http = require("http");
-const { Server } = require("socket.io");
-const cors = require("cors");
-const redisClient = require("./utils/redisClient.js");
-const authRoutes = require("./routes/authRoutes.js");
-const chatController = require("./controllers/chatController.js");
-const authMiddleware = require("./middlewares/authMiddleware.js");
-const path = require("path");
+import express from "express";
+import { config } from "dotenv";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import cors from "cors";
+import redisClient from "./utils/redisClient.js";
+import authRoutes from "./routes/authRoutes.js";
+import chatController from "./controllers/chatController.js";
+import authMiddleware from "./middlewares/authMiddleware.js";
+import path from "path";
 
-dotenv.config();
+config();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 const app = express();
-const server = http.createServer(app);
+const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
@@ -38,7 +38,7 @@ app.use("/api/auth", authRoutes);
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+  res.sendFile(join(__dirname, "frontend/dist", "index.html"));
 });
 
 server.listen(PORT, () => {
